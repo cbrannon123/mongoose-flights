@@ -1,32 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Flights</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-        
-        <a href="/flights/new">NEW FLIGHTS</a>
-        <h2>All Flights</h2>
+<%- include('../partials/header') %>
+       
         <table>
           <thead>
             <tr>
               <th>Airline</th>
               <th>Flight Number</th>
               <th>Departure</th>
+              <th>Airport</th>
             </tr>
           </thead>
           <tbody>
             <% flights.forEach(function(f) { %>
-              <tr>
+              <tr> 
                 <td><%= f.airline %></td>
                 <td><%= f.flightNo %></td>
                 <td><%= f.departs %></td>
+                <td><%= f.airport %></td>
+                <td><a>DETAILS</a></td>
               </tr>
             <% }) %>
           </tbody>
         </table>
-      </body>
+      <%- include('../partials/footer') %>

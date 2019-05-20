@@ -5,9 +5,23 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var flightSchema = new Schema({
-    airline: String,
-    flightNo: Number,
+    airline: {
+        type: String,
+        enum: ['American', 'Southwest', 'United']
+    },
+    flightNo: {
+        type: Number,
+        required: true, 
+        min: 10, max: 9999
+        
+        
+    },
     departs: Date
+    
+
+        
+        
+    
 });
 
 //complile the schema into a modle and export

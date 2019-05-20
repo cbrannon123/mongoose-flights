@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<section>
+    <div><%= flight.airline %> FLIGHT# <%= flight.flightNo %></div>
+    <div>FROM - <%= flight.airport %> <%= flight.departs %></div>
+</section>
+<br>
+<form method="POST" action="/flights" name="airport">
+    <label>Airport:
+            <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DAL">DAL</option>
+                <option value="LAX">LAX</option>
+                <option value="SEA">SEA</option>
+            </select>
+            <input type="submit" value="Add Destination">
+</form>
+
+
+
+
+
+
+
+<%- include('../partials/footer') %>

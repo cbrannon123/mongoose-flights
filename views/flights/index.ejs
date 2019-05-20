@@ -8,19 +8,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
+        
+        <a href="/flights/new">NEW FLIGHTS</a>
         <h2>All Flights</h2>
         <table>
           <thead>
             <tr>
               <th>Airline</th>
               <th>Flight Number</th>
-              <th>Departuer</th>
+              <th>Departure</th>
             </tr>
           </thead>
           <tbody>
             <% flights.forEach(function(f) { %>
               <tr>
-                <td><%= f.airline%></td>
+                <td><%= f.airline %></td>
                 <td><%= f.flightNo %></td>
                 <td><%= f.departs %></td>
               </tr>

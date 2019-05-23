@@ -12,30 +12,30 @@
         
         <h2>Enter Your Flight</h2>
         <form action="/flights" method="POST">
-            <label>Airline:
+            <label>Airline:</label>
                 <select name="airline">
                     <option value="American">American</option>
                     <option value="Southwest">Southwest</option>
                     <option value="United">United</option>
                 </select>
-            </label><br>
-            <label>Flight Number:
+            <br>
+            <label>Flight Number:</label>
                 <input type="text" name="flightNo" placeholder="Enter 4 digit Number">
-            </label><br>
-            <label for="departs">Departure:
-                    <input type="datetime-local" id="departs"
-                    name="departs" value="datetime-local" 
-                    min="datetime-local" max="2020-05-14T00:00">
-            </label><br>
-            <label>Airport:
+            <br>
+            <label>Departure:</label>
+                    <input type="datetime-local" name="departs">
+            <br>
+            <label>Airport:</label>
                     <select name="airport">
                         <option value="AUS">AUS</option>
                         <option value="DAL">DAL</option>
                         <option value="LAX">LAX</option>
                         <option value="SEA">SEA</option>
                     </select>
-                </label><br>
+                <br>
             <input type="submit" value="Add Flight">
+        </form>
+        
 
 
 

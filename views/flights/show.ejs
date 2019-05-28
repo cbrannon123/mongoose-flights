@@ -17,10 +17,11 @@
         </select><br>
         
 
-    <input type="datetime-local" id="departs" name="arrival"><span>Arival Time</span>
+    <input type="datetime-local" id="departs" name="arrival"><span>Arrival Time</span>
 <br>
 <input type="submit" value="Add Destination">
 </form>
+<% if (flight.destinations.length) { %>
 <table>
     <thead>
         <tr>
@@ -35,6 +36,33 @@
             <td> <%= d.airport %></td>
         </tr>
         <% }); %>
+    </tbody>
+</table>
+<% } else {%>
+    <h3> Add A Destination </h3>
+    <% } %>
+
+<a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
+<table>
+    <thead>
+        <tr>
+            <th>Seat</th>
+            <th>Price</th>
+            <th>Delete Ticket</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%tickets.forEach(function(t){%>
+        <tr>
+            <td><%= t.seat %></td>
+            <td>$<%= t.price %></td>
+            <td>
+                    <form action="/flights/<%=flight.id%>/ticket/<%=t.id%>?_method=DELETE" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+            </td>
+        </tr>
+        <%});%>
     </tbody>
 </table>
 

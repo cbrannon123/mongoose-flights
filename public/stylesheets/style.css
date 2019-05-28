@@ -1,8 +1,39 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(49, 87, 102);
 }
 
 a {
   color: #00B7FF;
+}
+
+.mainrow, thead {
+  border: 3px solid black;
+  
+  
+}
+
+ td {
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+input {
+  color:black;
+  background-color: rgb(165, 160, 160);
+  border: 1px solid black;
+}
+
+trow {
+  background-color: lightgray;
+}
+
+.overdue {
+  color: red;
+}
+
+.due {
+color: green;
 }

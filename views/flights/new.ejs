@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Flights</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body> 
-        <a href="/flights">ALL FLIGHTS</a>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+                <a class="navbar-brand" href="/flights">Mongoose Flights</a>
+               
+           </nav>
         
         <h2>Enter Your Flight</h2>
-        <form action="/flights" method="POST">
+        <form class='newFlight'action="/flights" method="POST">
             <label>Airline:</label>
                 <select name="airline">
                     <option value="American">American</option>
@@ -20,26 +24,20 @@
                 </select>
             <br>
             <label>Flight Number:</label>
-                <input type="text" name="flightNo" placeholder="Enter 4 digit Number">
+                <input class='lbl'type="text" name="flightNo" placeholder="Enter 4 digit Number">
             <br>
             <label>Departure:</label>
-                    <input type="datetime-local" name="departs">
+                    <input class="btn btn-info type="datetime-local" name="departs">
             <br>
             <label>Airport:</label>
-                    <select name="airport">
+                    <select  name="airport">
                         <option value="AUS">AUS</option>
                         <option value="DAL">DAL</option>
                         <option value="LAX">LAX</option>
                         <option value="SEA">SEA</option>
                     </select>
                 <br>
-            <input type="submit" value="Add Flight">
-        </form>
-        
-
-
-
-
+            <input class="btn btn-success" type="submit" value="Add Flight">
         </form>
 </body>
 </html>

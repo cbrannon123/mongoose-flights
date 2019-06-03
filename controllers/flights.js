@@ -19,6 +19,7 @@ module.exports = {
 function deleteFlight(req, res) {
     Flight.findByIdAndDelete({_id: req.params.id}, function(err, flight) {
         flight.save();
+        console.log(flight);
         res.redirect('back');
     });
 }

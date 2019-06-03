@@ -1,13 +1,36 @@
 <%- include('../partials/header') %>
 
-<section>
-    <div><%= flight.airline %> FLIGHT# <%= flight.flightNo %></div>
-    <div>FROM - <%= flight.airport %> <%= flight.departs %></div>
-</section>
-<br>
+<div>
+        <table class="table2">
+                <thead>
+                    <th class="detailsHead">Flight Details </th>
+                
+                <thead>
+                    
+                  <tr>
+                    <th scope="col">Flight #</th>
+                    <th scope="col">Airline</th>
+                    <th scope="col">Departure</th>
+                    <th scope="col">Airport</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><%= flight.flightNo %></td>
+                    <td><%= flight.airline %></td>
+                    <% if (flight.departs < Date.now()) {%>
+                    <td class="overdue"><%= f.departs %></td>
+                    <%} else {%>
+                    <td class="due"><%= flight.departs %></td>
+                    <td><%= flight.airport %></td>
+                    <% } %>
+                  </tr>
+                </tbody>
+              </table>
+
 <label>Select Destination</label>
-<br><br>
-<form method="POST" action="/flights/<%= flight._id %>/destinations"><span>Airport</span>
+<br>
+<form class='newFlight' method="POST" action="/flights/<%= flight._id %>/destinations"><span>Airport</span>
    
         <select name="airport">
             <option value="AUS">AUS</option>
@@ -17,14 +40,14 @@
         </select><br>
         
 
-    <input type="datetime-local" id="departs" name="arrival"><span>Arrival Time</span>
-<br>
-<input type="submit" value="Add Destination">
+        <span>Arrival </span><input class="btn btn-info" type="datetime-local" id="departs" name="arrival">
+<br><br>
+<input class="btn btn-success" type="submit" value="Add Destination">
 </form>
 <% if (flight.destinations.length) { %>
-<table>
+<table class="table2">
     <thead>
-        <tr>
+        <tr class="table2">
             <th>Arrival</th>
             <th>Airport</th>
         </tr>
@@ -40,32 +63,31 @@
 </table>
 <% } else {%>
     <h3> Add A Destination </h3>
-    <% } %>
+    <% } %><br>
 
-<a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
-<table>
-    <thead>
-        <tr>
-            <th>Seat</th>
+<a  class= 'btn btn-success' href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
+<table class='table2'>
+    <thead class="table2">
+        
+            <th class="table2">Seat</th>
             <th>Price</th>
-            <th>Delete Ticket</th>
-        </tr>
+        
     </thead>
     <tbody>
         <%tickets.forEach(function(t){%>
         <tr>
             <td><%= t.seat %></td>
-            <td>$<%= t.price %></td>
+            <td>$<%= t.price %>.00</td>
             <td>
-                    <form action="/flights/<%=flight.id%>/ticket/<%=t.id%>?_method=DELETE" method="POST">
-                        <button type="submit">Delete</button>
+                    <form action="/flights/<%=flight.id%>/ticket/<%=t.id%>?_method=DELETE" method="POST"><br>
+                        <button  class= 'btn btn-danger'type="submit">Delete</button>
                     </form>
             </td>
         </tr>
         <%});%>
     </tbody>
 </table>
-
+</div>
 
 
 

@@ -23,13 +23,12 @@ function createTicket(req, res) {
       price: req.body.price
     },
     function(err, ticket) {
-      Ticket.findOne(ticket._id).populate('flight').exec(function(err, t){
-        console.log(t)
-      })
-      console.log('ticket.flight.airline: ', ticket)
+      Ticket.findOne(ticket._id).populate('flight').exec(function(err, ticket){
+        //console.log(ticket)
+      });
       res.redirect(`/flights/${ticket.flight}`);
-    }
-  );
+      console.log('ticket.flight.airline: ', ticket)
+    });
 }
           
     

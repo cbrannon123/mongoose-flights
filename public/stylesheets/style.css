@@ -1,23 +1,49 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(49, 87, 102);
+  background-image: url('../images/plane.jpg');
+  background-size: cover;
 }
 
-a {
-  color: #00B7FF;
-}
-
-.mainrow, thead {
-  border: 3px solid black;
-  
-  
-}
-
- td {
+.newFlight {
+  display: inline-block;
   background-color: white;
+  padding: 40px;
+  border-top: 3px solid rgb(112, 31, 1);
+  border-right: 3px solid rgb(112, 31, 1);
+  border-bottom: 3px solid rgb(18, 127, 110);
+  border-left: 3px solid  rgb(18, 127, 110);
+ 
+}
+
+.lbl {
+  background-color: white;
+}
+
+.table {
+  margin: 90px 0 0 0;
+  background-color: aliceblue;
+  color: black;
+  border-top: 3px solid rgb(112, 31, 1);
+  border-right: 3px solid rgb(112, 31, 1);
+  border-bottom: 3px solid rgb(18, 127, 110);
+  border-left: 3px solid  rgb(18, 127, 110);
+
+}
+
+.table2 {
+  padding: 10px;
+  margin: 30px 0 0 0;
+  background-color: aliceblue;
+  color: black;
+  border-right: 3px solid rgb(112, 31, 1);
+  border-bottom: 3px solid rgb(18, 127, 110);
+  border-left: 3px solid  rgb(18, 127, 110);
+}
+
+.detailsHead {
+  border-bottom: 3px solid rgb(112, 31, 1);
   text-align: center;
-  padding: 5px;
 }
 
 input {
@@ -26,9 +52,7 @@ input {
   border: 1px solid black;
 }
 
-trow {
-  background-color: lightgray;
-}
+
 
 .overdue {
   color: red;
@@ -37,3 +61,4 @@ trow {
 .due {
 color: green;
 }
+
